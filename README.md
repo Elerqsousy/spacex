@@ -1,24 +1,27 @@
 [](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Bookstore
+# SpaceX
+This is an application to reservce space rockets and mission. 
+The Rockets section displays a list of all available SpaceX rockets. Users can book each rocket by clicking the reservation button or cancel the previously made booking. 
+The Missions section displays a list of current missions along with their brief description and participation status. There is also a button next to each mission that allows users to join the selected mission or leave the mission the user joined earlier.
+The My Profile section displays all reserved rockets and space missions.
 
-This is a simple SPA for a bookstore app. Users can add and save books with book name, author name, category, and progress. They can also search and categorize books according to their categories.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Screensot
 
-![screenshot](./screenshot.png)
+<!-- ![screenshot](./screenshot.png) -->
 
 ## Built With
 
 - React
-- Redux
+- Redux toolkit
 - ECMAScript-6 JS
 - CSS
 
 ## Live Demo
 
-Check the [Live Demo](https://chimerical-daifuku-2e3358.netlify.app) deployed on Netlify.
+Check the [Live Demo](https://gorgeous-melba-746edd.netlify.app/) deployed on Netlify.
 
 ### setting up the project
 To setup the project, you will need to clone the file locally and follow one of the scripts available below after running `npm install` to install project dependencies
@@ -68,6 +71,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 👤 **Mahmoud Rizk**
 
 - GitHub: [@Elerqsousy](https://github.com/Elerqsousy)
+- LinkedIn: [@Elerasousy](https://www.linkedin.com/in/mahmoud-rizk-elerqsousy/)
+
+👤 **Ekene Emeka**
+
+- GitHub: [@ekenecf](https://github.com/ekenecf)
+- LinkedIn: [@Ekene](https://www.linkedin.com/in/ekene-nwachukwu-1b9024153/)
 
 ## 🤝 Contributing
 
