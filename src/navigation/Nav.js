@@ -7,7 +7,7 @@ export default function Nav() {
   const routLinks = [
     {
       path: '/',
-      text: 'View',
+      text: 'My Profile',
     },
   ];
   return (
