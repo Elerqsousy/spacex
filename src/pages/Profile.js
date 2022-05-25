@@ -1,8 +1,6 @@
-import ReservedRocketList from '../components/ReservedRocketList';
-
 const Profile = () => (
-  <div>
-    <ReservedRocketList />
+  <div className="page-container">
+    My Profile component
   </div>
 );
 
