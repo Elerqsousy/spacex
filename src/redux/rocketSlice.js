@@ -2,9 +2,24 @@ import { createSlice } from '@reduxjs/toolkit';
 import api from './api';
 import local from './local';
 
-const bookSlice = createSlice({
+const rocketSlice = createSlice({
   name: 'rockets',
   initialState: { status: 'none', list: [] },
+  reducers: {
+    toggleReservation(state, action) {
+      const newlist = state.list.map((item) => {
+        if (item.id === action.payload) {
+          return { ...item, reserved: !item.reserved };
+        }
+        return item;
+      });
+      local.setRockets(newlist);
+      return {
+        ...state,
+        list: [...newlist],
+      };
+    },
+  },
   extraReducers: {
     [api.fetchRockets.pending]: (state) => ({ ...state, status: 'loading' }),
     [api.fetchRockets.fulfilled]: (state, action) => ({
@@ -15,7 +30,6 @@ const bookSlice = createSlice({
     [api.fetchRockets.rejected]: (state) => ({ ...state, status: 'fail' }),
     [local.getRockets.pending]: (state) => ({ ...state, status: 'loading' }),
     [local.getRockets.fulfilled]: (state, action) => ({
-      ...state,
       list: action.payload,
       status: 'idle',
     }),
@@ -23,4 +37,6 @@ const bookSlice = createSlice({
   },
 });
 
-export default bookSlice.reducer;
+export const { toggleReservation } = rocketSlice.actions;
+
+export default rocketSlice.reducer;

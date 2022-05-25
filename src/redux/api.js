@@ -28,7 +28,7 @@ api.fetchRockets = createAsyncThunk('rockets/fetchRockets', async () => {
       ['id', 'name', 'info', 'img'],
       ['id', 'rocket_name', 'description', 'flickr_images'],
     )));
-  local.setRockets(apiCall, 'rockets');
+  local.setRockets(apiCall);
   return apiCall;
 });
 
