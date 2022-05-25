@@ -6,7 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import Nav from './navigation/Nav';
 import Profile from './pages/Profile';
 import 'react-toastify/dist/ReactToastify.css';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Rockets = React.lazy(() => import('./pages/Rockets'));
 
