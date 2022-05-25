@@ -7,8 +7,9 @@ import Nav from './navigation/Nav';
 import Profile from './pages/Profile';
 import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Rockets from './pages/Rockets';
 
-const Rockets = React.lazy(() => import('./pages/Rockets'));
+// const Rockets = React.lazy(() => import('./pages/Rockets'));
 
 function App() {
   return (
