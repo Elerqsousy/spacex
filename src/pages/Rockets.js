@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import RocketList from '../components/RocketList';
 import api from '../redux/api';
 import local from '../redux/local';
 
@@ -22,8 +23,8 @@ const Rockets = () => {
   }, []);
 
   return (
-    <div className="page-container">
-      Rockets component
+    <div style={{ margin: '40px 10vw 0' }}>
+      <RocketList list={rockets.list} />
     </div>
   );
 };
