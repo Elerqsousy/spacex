@@ -1,11 +1,12 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { toggleReservation } from '../redux/rocketSlice';
 
-const RocketList = ({ list }) => {
+const RocketList = () => {
+  const rockets = useSelector((state) => state.rockets);
+  const { list } = rockets;
   const dispatch = useDispatch();
 
   const handleReservation = (id) => {
@@ -48,10 +49,6 @@ const RocketList = ({ list }) => {
       })}
     </>
   );
-};
-
-RocketList.propTypes = {
-  list: PropTypes.shape([]).isRequired,
 };
 
 export default RocketList;

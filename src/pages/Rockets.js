@@ -12,7 +12,7 @@ const Rockets = () => {
 
   return (
     <div style={{ margin: '40px 10vw 0' }}>
-      <RocketList list={rockets.list} />
+      <RocketList />
     </div>
   );
 };
