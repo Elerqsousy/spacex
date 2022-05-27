@@ -9,6 +9,10 @@ export default function Nav() {
       path: '/',
       text: 'My Profile',
     },
+    {
+      path: '/mission',
+      text: 'Missions',
+    },
   ];
   return (
     <header className="header">

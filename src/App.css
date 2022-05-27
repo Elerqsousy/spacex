@@ -32,3 +32,12 @@
 .page-container {
   margin-top: 100px;
 }
+
+ul.nav-links {
+  display: flex;
+}
+
+/*
+.right-nav {
+  width: 25%;
+} */
