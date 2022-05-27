@@ -4,6 +4,7 @@ import updateOnLoad from '../components/onLoad';
 import ReservedRocketList from '../components/ReservedRocketList';
 import api from '../reduxFiles/api';
 import local from '../reduxFiles/local';
+import styles from '../styles.module.css';
 
 const Profile = () => {
   const rockets = useSelector((state) => state.rockets);
@@ -41,7 +42,7 @@ const Profile = () => {
   }, [joinedMissions]);
 
   return (
-    <div>
+    <div className={styles.prfileContainer}>
       <table style={{ marginTop: 100 }}>
         <tbody>
           { registeredMissions.length

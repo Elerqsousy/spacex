@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import updateOnLoad from '../components/onLoad';
 import RocketList from '../components/RocketList';
+import styles from '../styles.module.css';
 
 const Rockets = () => {
   const rockets = useSelector((state) => state.rockets);
@@ -11,7 +12,7 @@ const Rockets = () => {
   }, []);
 
   return (
-    <div style={{ margin: '40px 10vw 0' }}>
+    <div className={styles.rocketsContainer}>
       <RocketList />
     </div>
   );
