@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getData, getLocal } from '../Redux/Missions/Reducer';
 import updateOnLoad from '../components/onLoad';
 import ReservedRocketList from '../components/ReservedRocketList';
+import api from '../reduxFiles/api';
+import local from '../reduxFiles/local';
 
 const Profile = () => {
   const rockets = useSelector((state) => state.rockets);
@@ -20,11 +21,12 @@ const Profile = () => {
   const dispatch = useDispatch();
 
   const handleLoadData = () => {
+    console.log(!localStorage.getItem('missions'));
     if (!data.length) {
-      if (!localStorage.getItem('data')) {
-        dispatch(getData());
+      if (!localStorage.getItem('missions')) {
+        dispatch(api.FETCH_DATA());
       } else {
-        dispatch(getLocal());
+        dispatch(local.FETCH_LOCAL_DATA());
       }
     }
   };

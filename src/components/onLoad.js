@@ -1,6 +1,6 @@
-import api from '../redux/api';
-import local from '../redux/local';
-import store from '../Redux/store';
+import api from '../reduxFiles/api';
+import local from '../reduxFiles/local';
+import store from '../reduxFiles/store';
 
 const updateOnLoad = (list) => {
   if (!list.length) {

@@ -1,22 +1,22 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getData, getLocal } from '../../Redux/Missions/Reducer';
+import api from '../../reduxFiles/api';
+import local from '../../reduxFiles/local';
 import MissionDetails from './MissionDetails';
-import { setError } from '../../Redux/Missions/DataActions';
 
 const Missions = () => {
   const {
-    data, loading, joinedMissions, error,
+    data, loading, joinedMissions,
   } = useSelector((state) => state.DataReducer);
   const dispatch = useDispatch();
-  // console.log(data);
 
   const handleLoadData = () => {
+    console.log(!localStorage.getItem('missions'));
     if (!data.length) {
-      if (!localStorage.getItem('data')) {
-        dispatch(getData());
+      if (!localStorage.getItem('missions')) {
+        dispatch(api.FETCH_DATA());
       } else {
-        dispatch(getLocal());
+        dispatch(local.FETCH_LOCAL_DATA());
       }
     }
   };
@@ -26,13 +26,9 @@ const Missions = () => {
   }, []);
 
   const check = (id) => {
-    try {
-      const x = joinedMissions.filter((ids) => ids === id);
-      if (x[0] === id) {
-        return true;
-      }
-    } catch (err) {
-      dispatch(setError(error));
+    const x = joinedMissions.filter((ids) => ids === id);
+    if (x[0] === id) {
+      return true;
     }
     return false;
   };

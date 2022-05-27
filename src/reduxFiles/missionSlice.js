@@ -13,7 +13,7 @@ const missionSlice = createSlice({
   name: 'missions',
   initialState,
   reducers: {
-    joinMission(state, action) {
+    setJoinMission(state, action) {
       const newState = {
         ...state,
         joinedMissions: [...state.joinedMissions, action.payload],
@@ -21,7 +21,7 @@ const missionSlice = createSlice({
       local.setToLocal(newState, 'missions');
       return newState;
     },
-    leaveMission(state, action) {
+    setLeaveMission(state, action) {
       const newState = {
         ...state,
         joinedMissions: [
@@ -35,19 +35,33 @@ const missionSlice = createSlice({
     },
   },
   extraReducers: {
-    [api.FETCH_DATA.pending]: (state) => ({ ...state, loading: true }),
-    [api.FETCH_DATA.fulfilled]: (state, action) => ({
-      ...state,
-      data: action.payload,
-      loading: false,
-    }),
-    [api.FETCH_DATA.rejected]: (state, action) => ({
-      ...state,
-      loading: false,
-      error: action.payload,
-    }),
+    [api.FETCH_DATA.pending]: (state) => {
+      const newState = { ...state, loading: true };
+      local.setToLocal(newState, 'missions');
+      return newState;
+    },
+    [api.FETCH_DATA.fulfilled]: (state, action) => {
+      const newState = {
+        ...state,
+        data: action.payload,
+        loading: false,
+      };
+      local.setToLocal(newState, 'missions');
+      return newState;
+    },
+    [api.FETCH_DATA.rejected]: (state, action) => {
+      const newState = {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
+      local.setToLocal(newState, 'missions');
+      return newState;
+    },
     [local.FETCH_LOCAL_DATA.pending]: (state) => ({ ...state, loading: true }),
-    [local.FETCH_LOCAL_DATA.fulfilled]: (action) => ({ ...action.payload }),
+    [local.FETCH_LOCAL_DATA.fulfilled]: (state, action) => ({
+      ...action.payload,
+    }),
     [local.FETCH_LOCAL_DATA.rejected]: (state, action) => ({
       ...state,
       loading: false,
@@ -56,6 +70,6 @@ const missionSlice = createSlice({
   },
 });
 
-export const { joinMission, leaveMission } = missionSlice.actions;
+export const { setJoinMission, setLeaveMission } = missionSlice.actions;
 
 export default missionSlice.reducer;

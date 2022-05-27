@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleReservation } from '../redux/rocketSlice';
+import { toggleReservation } from '../reduxFiles/rocketSlice';
 
 const ReservedRocketList = () => {
   const rockets = useSelector((state) => state.rockets);

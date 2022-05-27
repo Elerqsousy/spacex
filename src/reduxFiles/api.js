@@ -30,8 +30,7 @@ api.fetchRockets = createAsyncThunk('rockets/fetchRockets', async () => {
 });
 
 api.FETCH_DATA = createAsyncThunk('missions/fetchMissions', async () => {
-  const apiCall = await axios.get(baseURLMissions).then((response) => response);
-  local.setToLocal(apiCall, 'missions');
+  const apiCall = await axios.get(baseURLMissions).then((response) => response.data);
   return apiCall;
 });
 
