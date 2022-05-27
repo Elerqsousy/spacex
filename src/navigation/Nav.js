@@ -6,12 +6,16 @@ import logo from '../images/planet.png';
 export default function Nav() {
   const routLinks = [
     {
-      path: '/',
+      path: '/profile',
       text: 'My Profile',
     },
     {
       path: '/mission',
       text: 'Missions',
+    },
+    {
+      path: '/',
+      text: 'Rockets',
     },
   ];
   return (
