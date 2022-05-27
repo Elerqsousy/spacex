@@ -1,6 +1,6 @@
 import api from '../redux/api';
 import local from '../redux/local';
-import store from '../Redux/Missions/store';
+import store from '../Redux/store';
 
 const updateOnLoad = (list) => {
   if (!list.length) {

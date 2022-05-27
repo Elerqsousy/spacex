@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
-import rockets from '../rocketSlice';
-import DataReducer from '../missionSlice';
+import rockets from './rocketSlice';
+import DataReducer from './missionSlice';
 
 const rootReducer = combineReducers({
   rockets, DataReducer,
