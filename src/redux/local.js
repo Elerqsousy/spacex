@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const local = {};
 
-local.setRockets = (data, name) => {
+local.setRockets = (data, name = 'rockets') => {
   localStorage.setItem(name, JSON.stringify(data));
 };
 
