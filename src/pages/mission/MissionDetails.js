@@ -7,14 +7,14 @@ import styles from '../../styles.module.css';
 
 const MissionDetails = (props) => {
   const {
-    name, description, id, isornotamember,
+    name, description, id, isornotamember, index,
   } = props;
   const dispatch = useDispatch();
   let btnName;
   let value;
   if (isornotamember) {
     btnName = 'member';
-    value = 'ACTIVE MEMBER';
+    value = 'Active Member';
   } else {
     btnName = 'notMember';
     value = 'NOT A MEMBER';
@@ -28,35 +28,35 @@ const MissionDetails = (props) => {
   };
 
   return (
-
-    <div>
-      <table className={styles.body}>
-        <tbody>
-          <tr className="book-details">
-            <th>Mission</th>
-            <th className={styles.description}>Description</th>
-            <th>Status</th>
-          </tr>
-          <tr>
-            <td>{name}</td>
-            <td className={styles.rocketInfoContainer}>{description}</td>
-            <td>
-              <p type="button" className={btnName}>{value}</p>
-              <button className={`${styles.btn} ${isornotamember ? styles.danger : ''}`} type="button" id={id} onClick={() => handleSubscripe(id)}>
-                {isornotamember ? 'Leave Mission' : 'Join Mission'}
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <div />
-
+    <div
+      className={`${styles.tableRow} ${
+        index === 0 || index % 2 === 0 ? styles.dynamicBackground : ''
+      }`}
+    >
+      <h4>{name}</h4>
+      <p>{description}</p>
+      <div className={styles.condetionalDivFlex}>
+        <span className={btnName === 'member' ? styles.memberBadge : styles.notAMemberBadge}>
+          {value}
+        </span>
+      </div>
+      <div className={styles.condetionalDivFlex}>
+        <button
+          className={`${styles.btn} ${isornotamember ? styles.danger : ''}`}
+          type="button"
+          id={id}
+          onClick={() => handleSubscripe(id)}
+        >
+          {isornotamember ? 'Leave Mission' : 'Join Mission'}
+        </button>
+      </div>
     </div>
   );
 };
 
 MissionDetails.propTypes = {
   id: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
   isornotamember: PropTypes.bool.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
