@@ -13,6 +13,7 @@
 .rocketImgContainer {
   width: 30%;
   height: 100%;
+  max-width: 250px;
 }
 
 .rocketImg {
@@ -25,6 +26,7 @@
   display: flex;
   flex-direction: column;
   padding: 20px;
+  flex-grow: 1;
 }
 
 .rocketInfoContainer h3 {
@@ -34,6 +36,7 @@
 
 .rocketInfoContainer p {
   font-size: 11px;
+  margin-bottom: 15px;
 }
 
 .reservedBadge {
@@ -109,6 +112,7 @@
 
 .profileSection h2 {
   font-size: 20px;
+  margin-bottom: 20px;
 }
 
 .profileList {

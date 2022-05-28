@@ -5,7 +5,6 @@ import React from 'react';
 import Nav from './navigation/Nav';
 import Profile from './pages/Profile';
 import Missions from './pages/mission/Missions';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Rockets from './pages/Rockets';
 
 function App() {
