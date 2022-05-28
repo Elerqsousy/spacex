@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { setJoinMission, setLeaveMission } from '../../reduxFiles/missionSlice';
 import './mission.css';
+import styles from '../../styles.module.css';
 
 const MissionDetails = (props) => {
   const {
@@ -29,19 +30,19 @@ const MissionDetails = (props) => {
   return (
 
     <div>
-      <table>
+      <table className={styles.body}>
         <tbody>
           <tr className="book-details">
             <th>Mission</th>
-            <th>Description</th>
+            <th className={styles.description}>Description</th>
             <th>Status</th>
           </tr>
           <tr>
             <td>{name}</td>
-            <td>{description}</td>
+            <td className={styles.rocketInfoContainer}>{description}</td>
             <td>
               <p type="button" className={btnName}>{value}</p>
-              <button className={isornotamember ? 'leave' : 'join'} type="button" id={id} onClick={() => handleSubscripe(id)}>
+              <button className={`${styles.btn} ${isornotamember ? styles.danger : ''}`} type="button" id={id} onClick={() => handleSubscripe(id)}>
                 {isornotamember ? 'Leave Mission' : 'Join Mission'}
               </button>
             </td>
