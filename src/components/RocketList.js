@@ -1,8 +1,7 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleReservation } from '../reduxFiles/rocketSlice';
+import styles from '../styles.module.css';
 
 const RocketList = () => {
   const rockets = useSelector((state) => state.rockets);
@@ -20,31 +19,23 @@ const RocketList = () => {
           id, name, info, img, reserved,
         } = item;
         return (
-          <div
+          <article
             key={id}
-            style={{
-              width: '100%',
-              display: 'flex',
-              marginBottom: 20,
-              border: '1px solid rgba(0,0,0,.125)',
-              borderRadius: '.25rem',
-            }}
+            className={styles.rocketListContainer}
           >
-            <Card style={{ width: '20%', border: 'unset' }}>
-              <Card.Img variant="top" src={img} />
-            </Card>
-            <Card style={{ width: '80%', border: 'unset' }}>
-              <Card.Body>
-                <Card.Title>{name}</Card.Title>
-                <Card.Text style={{ fontSize: 12 }}>
-                  {reserved ? <span className="reserved-badge">Reserved</span> : <></>}
-                  {' '}
-                  {info}
-                </Card.Text>
-                <Button variant="primary" onClick={() => handleReservation(id)}>{reserved ? 'Cancel Reservation' : 'Reserve Rocket'}</Button>
-              </Card.Body>
-            </Card>
-          </div>
+            <div className={styles.rocketImgContainer}>
+              <img alt={name} src={img} className={styles.rocketImg} />
+            </div>
+            <div className={styles.rocketInfoContainer}>
+              <h3>{name}</h3>
+              <p>
+                {reserved ? <span className={styles.reservedBadge}>Reserved</span> : <></>}
+                {' '}
+                {info}
+              </p>
+              <button type="button" className={`${styles.btn} ${reserved ? styles.danger : ''}`} onClick={() => handleReservation(id)}>{reserved ? 'Cancel Reservation' : 'Reserve Rocket'}</button>
+            </div>
+          </article>
         );
       })}
     </>

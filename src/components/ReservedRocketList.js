@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleReservation } from '../reduxFiles/rocketSlice';
+import styles from '../styles.module.css';
 
 const ReservedRocketList = () => {
   const rockets = useSelector((state) => state.rockets);
@@ -22,20 +22,22 @@ const ReservedRocketList = () => {
   }, [rockets]);
 
   return (
-    <div>
-      <h1>My Rockets</h1>
-      <ul>
+    <article className={styles.profileSection}>
+      <h2>My Rockets</h2>
+      <ul className={styles.profileList}>
         {list.length
           ? list.map((item) => (
-            <li key={item.id}>
+            <li className={styles.ProfileistItem} key={item.id}>
               <span>{item.name}</span>
-              <Button onClick={() => { openLink(item.url); }}>More</Button>
-              <Button variant="primary" onClick={() => handleReservation(item.id)}>Cancel Reservation</Button>
+              <div className={styles.btnsGroup}>
+                <button type="button" className={`${styles.btn} ${styles.info}`} onClick={() => { openLink(item.url); }}>Info</button>
+                <button type="button" className={`${styles.btn} ${styles.danger}`} variant="primary" onClick={() => handleReservation(item.id)}>Cancel Reservation</button>
+              </div>
             </li>
           ))
-          : <li>list is empty</li>}
+          : <li>You have not reserved any rockets!</li>}
       </ul>
-    </div>
+    </article>
   );
 };
 
