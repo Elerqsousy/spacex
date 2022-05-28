@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.leave {
+  /* background-color: white; */
+  color: black;
+  border: 2px solid;
+}
+
+.notMember {
+  background-color: gray;
+  color: #fff;
+  text-align: center;
+}
+
+.member {
+  background-color: aqua;
+  text-align: center;
+}
