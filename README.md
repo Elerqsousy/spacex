@@ -28,6 +28,29 @@ Check the [Live Demo](https://gorgeous-melba-746edd.netlify.app/) deployed on Ne
 
 ### setting up the project
 To setup the project, you will need to clone the file locally and follow one of the scripts available below after running `npm install` to install project dependencies
+
+## Authors
+
+👤 **Mahmoud Rizk**
+
+- GitHub: [@Elerqsousy](https://github.com/Elerqsousy)
+- LinkedIn: [@Elerasousy](https://www.linkedin.com/in/mahmoud-rizk-elerqsousy/)
+
+👤 **Ekene Emeka**
+
+- GitHub: [@ekenecf](https://github.com/ekenecf)
+- LinkedIn: [@Ekene](https://www.linkedin.com/in/nwachukwuekene/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -69,32 +92,9 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-## Authors
-
-👤 **Mahmoud Rizk**
-
-- GitHub: [@Elerqsousy](https://github.com/Elerqsousy)
-- LinkedIn: [@Elerasousy](https://www.linkedin.com/in/mahmoud-rizk-elerqsousy/)
-
-👤 **Ekene Emeka**
-
-- GitHub: [@ekenecf](https://github.com/ekenecf)
-- LinkedIn: [@Ekene](https://www.linkedin.com/in/nwachukwuekene/)
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](../../issues/).
-
-## Show your support
-
-Give a ⭐️ if you like this project!
-
 ## 📝 License
 
 This project is [MIT](./LICENSE) licensed.
 
 
-# Getting Started with Create React App
 

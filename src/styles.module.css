@@ -12,13 +12,16 @@
 
 .rocketImgContainer {
   width: 30%;
-  height: 100%;
   max-width: 250px;
 }
 
 .rocketImg {
   width: 100%;
-  height: auto;
+  height: 100%;
+}
+
+.rocketImg img {
+  height: 100%;
 }
 
 .rocketInfoContainer {
