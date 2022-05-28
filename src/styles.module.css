@@ -59,6 +59,7 @@ td.rocketInfoContainer {
 .rocketInfoContainer p {
   font-size: 11px;
   margin-bottom: 15px;
+  line-height: 20px;
 }
 
 .reservedBadge {
@@ -67,6 +68,7 @@ td.rocketInfoContainer {
   padding: 2px 5px;
   border-radius: 3px;
   color: white;
+  margin-right: 10px;
 }
 
 .btn {
@@ -165,4 +167,61 @@ td.rocketInfoContainer {
 
 .profileList li:last-child {
   border-bottom: 0;
+}
+
+.missionsContainer {
+  margin: 20px;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 12% 64% 12% 12%;
+}
+
+.tableRow h4,
+.tableRow p,
+.tableRow div {
+  padding: 10px;
+  border-bottom: 1px solid rgb(214, 214, 214);
+  border-right: 1px solid rgb(214, 214, 214);
+}
+
+.table {
+  border-top: 1px solid rgb(214, 214, 214);
+  border-left: 1px solid rgb(214, 214, 214);
+}
+
+.dynamicBackground {
+  background: #f2f2f2;
+}
+
+.memberBadge {
+  background: #18a2b8;
+  font-size: 13px;
+  padding: 3px 6px;
+  font-weight: 500;
+  border-radius: 3px;
+  color: white;
+  width: max-content;
+  margin: 0;
+}
+
+.notAMemberBadge {
+  background: #6d757d;
+  font-size: 13px;
+  padding: 3px 6px;
+  font-weight: 500;
+  border-radius: 3px;
+  color: white;
+  width: max-content;
+  margin: 0;
+}
+
+.condetionalDivFlex {
+  display: flex;
+  align-items: center;
+}
+
+.tableRow p {
+  padding-bottom: 30px;
 }
