@@ -53,7 +53,7 @@
   cursor: pointer;
   font-size: 12px;
   border-radius: 0.25rem;
-  padding: 3px 20px;
+  padding: 2px 10px;
   width: fit-content;
 }
 
@@ -76,17 +76,67 @@
   background-color: #e73b4c;
   border: 3px solid #e73b4c;
 }
+
 .btn.danger:active {
   background-color: #a51120;
   border: 3px solid #e84f5e;
 }
 
+.btn.info {
+  background-color: #6c757d;
+  border: 3px solid #6c757d;
+}
+
+.btn.info:hover {
+  background-color: #8397a9;
+  border: 3px solid #8397a9;
+}
+
+.btn.info:active {
+  background-color: #59626a;
+  border: 3px solid #9aabb9;
+}
+
 .prfileContainer {
   display: flex;
   margin: 40px 10vw 0;
+  gap: 2%;
 }
 
 .profileSection {
   width: 50%;
-  border: 1px solid rgb(214, 214, 214)
+}
+
+.profileSection h2 {
+  font-size: 20px;
+}
+
+.profileList {
+  border: 1px solid rgb(214, 214, 214);
+  border-radius: 5px;
+  min-height: min-content;
+  padding: 0;
+  min-width: min-content;
+}
+
+.ProfileistItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 15px;
+  border-bottom: 1px solid rgb(214, 214, 214);
+}
+
+.ProfileistItem span {
+  font-size: 13px;
+}
+
+.btnsGroup {
+  display: flex;
+  gap: 5px;
+}
+
+.profileList li:last-child {
+  border-bottom: 0;
 }

@@ -18,7 +18,6 @@ local.FETCH_LOCAL_DATA = createAsyncThunk(
   'missions/getMissionsFromLocal',
   async (name = 'missions') => {
     const data = await JSON.parse(localStorage.getItem(name));
-    console.log(data);
     return data;
   },
 );

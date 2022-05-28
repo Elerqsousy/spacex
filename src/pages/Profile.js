@@ -14,15 +14,12 @@ const Profile = () => {
   }, []);
 
   // Missions
-  const {
-    data, joinedMissions,
-  } = useSelector((state) => state.DataReducer);
+  const { data, joinedMissions } = useSelector((state) => state.DataReducer);
 
   const [registeredMissions, setRegisteredMissions] = useState([]);
   const dispatch = useDispatch();
 
   const handleLoadData = () => {
-    console.log(!localStorage.getItem('missions'));
     if (!data.length) {
       if (!localStorage.getItem('missions')) {
         dispatch(api.FETCH_DATA());
@@ -36,26 +33,27 @@ const Profile = () => {
   }, []);
 
   useEffect(() => {
-    setRegisteredMissions(joinedMissions.map((id) => data.find(
-      (mission) => mission.mission_id === id,
-    )));
+    setRegisteredMissions(
+      joinedMissions.map((id) => data.find((mission) => mission.mission_id === id)),
+    );
   }, [joinedMissions]);
 
   return (
     <div className={styles.prfileContainer}>
-      <table style={{ marginTop: 100 }}>
-        <tbody>
-          { registeredMissions.length
-            ? registeredMissions.map((join) => (
-              <tr key={join?.mission_id}>
-                <td>
-                  <p>{join?.mission_name}</p>
-                </td>
-              </tr>
+      <article className={styles.profileSection}>
+        <h2>My Missions</h2>
+        <ul className={styles.profileList}>
+          {registeredMissions.length ? (
+            registeredMissions.map((join) => (
+              <li className={styles.ProfileistItem} key={join?.mission_id}>
+                <span>{join?.mission_name}</span>
+              </li>
             ))
-            : <tr><td><p className="notmember">You have not joined any missions</p></td></tr>}
-        </tbody>
-      </table>
+          ) : (
+            <li>You have not joined any missions</li>
+          )}
+        </ul>
+      </article>
       <ReservedRocketList />
     </div>
   );

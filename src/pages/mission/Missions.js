@@ -11,7 +11,6 @@ const Missions = () => {
   const dispatch = useDispatch();
 
   const handleLoadData = () => {
-    console.log(!localStorage.getItem('missions'));
     if (!data.length) {
       if (!localStorage.getItem('missions')) {
         dispatch(api.FETCH_DATA());
