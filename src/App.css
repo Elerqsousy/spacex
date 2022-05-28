@@ -1,12 +1,11 @@
 .header {
-  position: fixed;
-  top: 0;
-  height: 80px;
-
-  /* background: black; */
+  height: 90px;
   width: 100%;
-  padding: 20px 80px;
-  background-color: grey;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid rgba(160, 159, 159, 0.487);
 }
 
 .header nav {
@@ -17,18 +16,46 @@
 
 .left-nav {
   height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .left-nav img {
   height: 50px;
   width: 50px;
+  margin-right: 25px;
+}
+
+.left-nav h1 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.nav-link {
+  margin-left: 15px;
+  padding-left: 15px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #007bff;
 }
 
 .nav-link a.active {
   text-decoration: underline;
-  color: red;
 }
 
 .page-container {
   margin-top: 100px;
+}
+
+ul.nav-links {
+  display: flex;
+}
+
+.nav-links .nav-link:last-child {
+  border-left: 1px solid rgb(138, 136, 136);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
 }

@@ -10,7 +10,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Screensot
 
-<!-- ![screenshot](./screenshot.png) -->
+![screenshot](./screenshotRockets.png)
+![screenshot](./screenshotmissions.png)
+![screenshot](./screenshotprofile.png)
+
 
 ## Built With
 
@@ -76,7 +79,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 👤 **Ekene Emeka**
 
 - GitHub: [@ekenecf](https://github.com/ekenecf)
-- LinkedIn: [@Ekene](https://www.linkedin.com/in/ekene-nwachukwu-1b9024153/)
+- LinkedIn: [@Ekene](https://www.linkedin.com/in/nwachukwuekene/)
 
 ## 🤝 Contributing
 
